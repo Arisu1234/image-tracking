@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.4.1/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.1/dist/mindar-image-aframe.prod.js"></script>
+  </head>
+  <body>
+    <a-scene mindar-image="imageTargetSrc: ./qr.mind;" color-space="sRGB" renderer="colorManagement: true, physicallyCorrectLights" vr-mode-ui="enabled: false" device-orientation-permission-ui="enabled: false">
+      <a-assets>
+        <video id="vid" autoplay loop="true" src="psycho bodi.webm"></video>
+        <img id="fb" src="facebook.png">
+        <img id="web" src="web.png">
+        <img id="phone" src="phone.png">
+        <img id="map" src="maps.png">
+        <a-gltf-model id="suuri" src="suuri.gltf"></a-gltf-model>
+        <a-text></a-text>
+
+      </a-assets>
+
+      <a-camera position="0 0 0" look-controls="enabled: false" object: .clickable></a-camera>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-video  height="4" width="2.3" src="#vid"></a-video>
+        <a-plane position="0 -1.65 0.1"  width="2.3" height="0.6"></a-plane>
+        <a-text value="A. Bilguun" color="black" width="5" position="-1 -1.45 0.2"></a-text>
+        <a-text value="3D designer" color="black" width="4" position="-1 -1.7 0.2"></a-text>
+        <a-image src="#fb" height="1" width="1" position="-2 1.5 0"></a-image>
+        <a-image src="#web" height="1" width="1" position="-2 0 0"></a-image>
+        <a-image src="#phone" height="1" width="1" position="2 1.5 0"></a-image>
+        <a-image src="#map" height="1" width="1" position="2 0 0"></a-image>
+        <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="-2 1.5 -0.3"></a-gltf-model>
+        <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="-2 0 -0.3"></a-gltf-model>
+        <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="2 1.5 -0.3"></a-gltf-model>
+        <a-gltf-model src="#suuri" scale="0.5 0.5 0.5" rotation="90 0 0" position="2 0 -0.3"></a-gltf-model>
+
+
+      </a-entity>
+
+    </a-scene>
+  </body>
+</html>
